@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.querydata.dao.QdColumnNameMapper" >
+  <resultMap id="BaseResultMap" type="cn.querydata.pojo.QdColumnName" >
+    <result column="column_name" property="columnName" jdbcType="VARCHAR" />
+    <result column="column_ch_name" property="columnChName" jdbcType="VARCHAR" />
+    <result column="colmn_ch_status" property="colmnChStatus" jdbcType="INTEGER" />
+    <result column="column_data_type" property="columnDataType" jdbcType="VARCHAR" />
+    <result column="column_no" property="columnNo" jdbcType="INTEGER" />
+    <result column="table_id" property="tableId" jdbcType="INTEGER" />
+    <result column="db_id" property="dbId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    column_name, column_ch_name, colmn_ch_status, column_data_type, column_no, table_id, 
+    db_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.querydata.pojo.QdColumnNameExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from qd_column_name
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="cn.querydata.pojo.QdColumnNameExample" >
+    delete from qd_column_name
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.querydata.pojo.QdColumnName" >
+    insert into qd_column_name (column_name, column_ch_name, colmn_ch_status, 
+      column_data_type, column_no, table_id, 
+      db_id)
+    values (#{columnName,jdbcType=VARCHAR}, #{columnChName,jdbcType=VARCHAR}, #{colmnChStatus,jdbcType=INTEGER}, 
+      #{columnDataType,jdbcType=VARCHAR}, #{columnNo,jdbcType=INTEGER}, #{tableId,jdbcType=INTEGER}, 
+      #{dbId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.querydata.pojo.QdColumnName" >
+    insert into qd_column_name
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="columnName != null" >
+        column_name,
+      </if>
+      <if test="columnChName != null" >
+        column_ch_name,
+      </if>
+      <if test="colmnChStatus != null" >
+        colmn_ch_status,
+      </if>
+      <if test="columnDataType != null" >
+        column_data_type,
+      </if>
+      <if test="columnNo != null" >
+        column_no,
+      </if>
+      <if test="tableId != null" >
+        table_id,
+      </if>
+      <if test="dbId != null" >
+        db_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="columnName != null" >
+        #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="columnChName != null" >
+        #{columnChName,jdbcType=VARCHAR},
+      </if>
+      <if test="colmnChStatus != null" >
+        #{colmnChStatus,jdbcType=INTEGER},
+      </if>
+      <if test="columnDataType != null" >
+        #{columnDataType,jdbcType=VARCHAR},
+      </if>
+      <if test="columnNo != null" >
+        #{columnNo,jdbcType=INTEGER},
+      </if>
+      <if test="tableId != null" >
+        #{tableId,jdbcType=INTEGER},
+      </if>
+      <if test="dbId != null" >
+        #{dbId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.querydata.pojo.QdColumnNameExample" resultType="java.lang.Integer" >
+    select count(*) from qd_column_name
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update qd_column_name
+    <set >
+      <if test="record.columnName != null" >
+        column_name = #{record.columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.columnChName != null" >
+        column_ch_name = #{record.columnChName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.colmnChStatus != null" >
+        colmn_ch_status = #{record.colmnChStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.columnDataType != null" >
+        column_data_type = #{record.columnDataType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.columnNo != null" >
+        column_no = #{record.columnNo,jdbcType=INTEGER},
+      </if>
+      <if test="record.tableId != null" >
+        table_id = #{record.tableId,jdbcType=INTEGER},
+      </if>
+      <if test="record.dbId != null" >
+        db_id = #{record.dbId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update qd_column_name
+    set column_name = #{record.columnName,jdbcType=VARCHAR},
+      column_ch_name = #{record.columnChName,jdbcType=VARCHAR},
+      colmn_ch_status = #{record.colmnChStatus,jdbcType=INTEGER},
+      column_data_type = #{record.columnDataType,jdbcType=VARCHAR},
+      column_no = #{record.columnNo,jdbcType=INTEGER},
+      table_id = #{record.tableId,jdbcType=INTEGER},
+      db_id = #{record.dbId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

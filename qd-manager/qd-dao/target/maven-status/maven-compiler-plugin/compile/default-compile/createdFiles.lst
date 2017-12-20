@@ -1,0 +1,9 @@
+cn\querydata\dao\QdQueryConditionMapper.class
+cn\querydata\dao\QdDatabaseMapper.class
+cn\querydata\dao\QdPremissionMapper.class
+cn\querydata\dao\QdRoleAccountMapper.class
+cn\querydata\dao\QdAccountMapper.class
+cn\querydata\dao\QdColumnNameMapper.class
+cn\querydata\dao\QdTableNameMapper.class
+cn\querydata\dao\QdRoleMapper.class
+cn\querydata\dao\QdAdminMapper.class

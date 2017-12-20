@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="qd-dao" />
+        <module name="qd-manager-interface" />
+        <module name="qd-manager-service" />
+        <module name="qd-manager-web" />
+        <module name="qd-pojo" />
+        <module name="qd-user-interfece" />
+        <module name="qd-user-service" />
+        <module name="qd-user-web" />
+        <module name="qd-utils" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="qd-dao" target="1.8" />
+      <module name="qd-interface" target="1.8" />
+      <module name="qd-manager" target="1.8" />
+      <module name="qd-manager-interface" target="1.8" />
+      <module name="qd-manager-service" target="1.8" />
+      <module name="qd-manager-web" target="1.8" />
+      <module name="qd-pojo" target="1.8" />
+      <module name="qd-root" target="1.8" />
+      <module name="qd-user" target="1.8" />
+      <module name="qd-user-interfece" target="1.8" />
+      <module name="qd-user-service" target="1.8" />
+      <module name="qd-user-web" target="1.8" />
+      <module name="qd-utils" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

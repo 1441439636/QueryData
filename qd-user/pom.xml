@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>qd-root</artifactId>
+        <groupId>cn.querydata</groupId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../qd-root/pom.xml</relativePath>
+    </parent>
+
+    <!--注意打包方式为jar-->
+    <packaging>pom</packaging>
+    <modules>
+        <module>qd-user-service</module>
+        <module>qd-user-interfece</module>
+    </modules>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>qd-user</artifactId>
+
+<build>     <finalName>qd-user</finalName>
+    <!-- 配置插件 -->
+    <plugins>
+        <plugin>
+            <groupId>org.apache.tomcat.maven</groupId>
+            <artifactId>tomcat7-maven-plugin</artifactId>
+            <version>2.2</version>
+            <configuration>
+                <port>8083</port>
+                <path>/</path>
+            </configuration>
+        </plugin>
+    </plugins>
+    <resources>
+        <resource>
+            <directory>${basedir}/src/main/resources</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+                <include>**/*.tld</include>
+            </includes>
+            <filtering>false</filtering>
+            <!--这里是false，用true会报 数据库连接 错误-->
+        </resource>
+        <resource>
+            <directory>${basedir}/src/main/java</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+                <include>**/*.tld</include>
+            </includes>
+            <filtering>false</filtering>
+        </resource>
+    </resources>
+</build>
+</project>

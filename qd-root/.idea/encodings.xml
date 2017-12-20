@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../qd-manager" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager/qd-dao" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager/qd-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager/qd-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager/qd-manager-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager/qd-manager-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-manager/qd-pojo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-user-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-user/qd-user-interfece" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-user/qd-user-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../qd-utils" charset="UTF-8" />
+  </component>
+</project>

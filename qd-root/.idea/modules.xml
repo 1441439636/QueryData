@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../qd-manager/qd-dao/qd-dao.iml" filepath="$PROJECT_DIR$/../qd-manager/qd-dao/qd-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-manager/qd-manager.iml" filepath="$PROJECT_DIR$/../qd-manager/qd-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-manager/qd-manager-interface/qd-manager-interface.iml" filepath="$PROJECT_DIR$/../qd-manager/qd-manager-interface/qd-manager-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-manager/qd-manager-service/qd-manager-service.iml" filepath="$PROJECT_DIR$/../qd-manager/qd-manager-service/qd-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-manager-web/qd-manager-web.iml" filepath="$PROJECT_DIR$/../qd-manager-web/qd-manager-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-manager/qd-pojo/qd-pojo.iml" filepath="$PROJECT_DIR$/../qd-manager/qd-pojo/qd-pojo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qd-root.iml" filepath="$PROJECT_DIR$/qd-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-user/qd-user.iml" filepath="$PROJECT_DIR$/../qd-user/qd-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-user/qd-user-interfece/qd-user-interfece.iml" filepath="$PROJECT_DIR$/../qd-user/qd-user-interfece/qd-user-interfece.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-user/qd-user-service/qd-user-service.iml" filepath="$PROJECT_DIR$/../qd-user/qd-user-service/qd-user-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../qd-user-web/qd-user-web.iml" filepath="$PROJECT_DIR$/../qd-user-web/qd-user-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qd-utils/qd-utils.iml" filepath="$PROJECT_DIR$/qd-utils/qd-utils.iml" />
+    </modules>
+  </component>
+</project>

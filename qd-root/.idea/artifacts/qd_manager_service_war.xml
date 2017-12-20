@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qd-manager-service:war">
+    <output-path>$PROJECT_DIR$/../qd-manager/qd-manager-service/target</output-path>
+    <root id="archive" name="qd-manager-service.war">
+      <element id="artifact" artifact-name="qd-manager-service:war exploded" />
+    </root>
+  </artifact>
+</component>

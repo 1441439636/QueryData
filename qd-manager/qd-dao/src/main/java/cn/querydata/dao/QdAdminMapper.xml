@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.querydata.dao.QdAdminMapper" >
+  <resultMap id="BaseResultMap" type="cn.querydata.pojo.QdAdmin" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="admin_num" property="adminNum" jdbcType="VARCHAR" />
+    <result column="admin_passwd" property="adminPasswd" jdbcType="VARCHAR" />
+    <result column="admin_type" property="adminType" jdbcType="INTEGER" />
+    <result column="admin_info" property="adminInfo" jdbcType="VARCHAR" />
+    <result column="admin_name" property="adminName" jdbcType="VARCHAR" />
+    <result column="admin_mail" property="adminMail" jdbcType="VARCHAR" />
+    <result column="admin_phone" property="adminPhone" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, admin_num, admin_passwd, admin_type, admin_info, admin_name, admin_mail, admin_phone
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="cn.querydata.pojo.QdAdminExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from qd_admin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from qd_admin
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from qd_admin
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="cn.querydata.pojo.QdAdminExample" >
+    delete from qd_admin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.querydata.pojo.QdAdmin" >
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into qd_admin (id, admin_num, admin_passwd, 
+      admin_type, admin_info, admin_name, 
+      admin_mail, admin_phone)
+    values (#{id,jdbcType=INTEGER}, #{adminNum,jdbcType=VARCHAR}, #{adminPasswd,jdbcType=VARCHAR}, 
+      #{adminType,jdbcType=INTEGER}, #{adminInfo,jdbcType=VARCHAR}, #{adminName,jdbcType=VARCHAR}, 
+      #{adminMail,jdbcType=VARCHAR}, #{adminPhone,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.querydata.pojo.QdAdmin" >
+    insert into qd_admin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="adminNum != null" >
+        admin_num,
+      </if>
+      <if test="adminPasswd != null" >
+        admin_passwd,
+      </if>
+      <if test="adminType != null" >
+        admin_type,
+      </if>
+      <if test="adminInfo != null" >
+        admin_info,
+      </if>
+      <if test="adminName != null" >
+        admin_name,
+      </if>
+      <if test="adminMail != null" >
+        admin_mail,
+      </if>
+      <if test="adminPhone != null" >
+        admin_phone,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="adminNum != null" >
+        #{adminNum,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPasswd != null" >
+        #{adminPasswd,jdbcType=VARCHAR},
+      </if>
+      <if test="adminType != null" >
+        #{adminType,jdbcType=INTEGER},
+      </if>
+      <if test="adminInfo != null" >
+        #{adminInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="adminName != null" >
+        #{adminName,jdbcType=VARCHAR},
+      </if>
+      <if test="adminMail != null" >
+        #{adminMail,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPhone != null" >
+        #{adminPhone,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="cn.querydata.pojo.QdAdminExample" resultType="java.lang.Integer" >
+    select count(*) from qd_admin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update qd_admin
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.adminNum != null" >
+        admin_num = #{record.adminNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminPasswd != null" >
+        admin_passwd = #{record.adminPasswd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminType != null" >
+        admin_type = #{record.adminType,jdbcType=INTEGER},
+      </if>
+      <if test="record.adminInfo != null" >
+        admin_info = #{record.adminInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminName != null" >
+        admin_name = #{record.adminName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminMail != null" >
+        admin_mail = #{record.adminMail,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adminPhone != null" >
+        admin_phone = #{record.adminPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update qd_admin
+    set id = #{record.id,jdbcType=INTEGER},
+      admin_num = #{record.adminNum,jdbcType=VARCHAR},
+      admin_passwd = #{record.adminPasswd,jdbcType=VARCHAR},
+      admin_type = #{record.adminType,jdbcType=INTEGER},
+      admin_info = #{record.adminInfo,jdbcType=VARCHAR},
+      admin_name = #{record.adminName,jdbcType=VARCHAR},
+      admin_mail = #{record.adminMail,jdbcType=VARCHAR},
+      admin_phone = #{record.adminPhone,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.querydata.pojo.QdAdmin" >
+    update qd_admin
+    <set >
+      <if test="adminNum != null" >
+        admin_num = #{adminNum,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPasswd != null" >
+        admin_passwd = #{adminPasswd,jdbcType=VARCHAR},
+      </if>
+      <if test="adminType != null" >
+        admin_type = #{adminType,jdbcType=INTEGER},
+      </if>
+      <if test="adminInfo != null" >
+        admin_info = #{adminInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="adminName != null" >
+        admin_name = #{adminName,jdbcType=VARCHAR},
+      </if>
+      <if test="adminMail != null" >
+        admin_mail = #{adminMail,jdbcType=VARCHAR},
+      </if>
+      <if test="adminPhone != null" >
+        admin_phone = #{adminPhone,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.querydata.pojo.QdAdmin" >
+    update qd_admin
+    set admin_num = #{adminNum,jdbcType=VARCHAR},
+      admin_passwd = #{adminPasswd,jdbcType=VARCHAR},
+      admin_type = #{adminType,jdbcType=INTEGER},
+      admin_info = #{adminInfo,jdbcType=VARCHAR},
+      admin_name = #{adminName,jdbcType=VARCHAR},
+      admin_mail = #{adminMail,jdbcType=VARCHAR},
+      admin_phone = #{adminPhone,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
